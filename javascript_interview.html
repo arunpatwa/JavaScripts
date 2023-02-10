@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- 
+  <script>
+    //3
+    let a = [20];
+    let b = [20];
+    console.warn(a[0] == b[0]);
+    console.warn(a[0] === b[0]);
+  </script> -->
+
+  <!-- <script>
+    //4
+    let z = [1, 2, 3, 4];
+    let a = { name: "arun" };
+    console.warn(...z);
+
+    //output: 1 2 3 4
+  </script> -->
+
+  <!-- <script>
+    //5
+
+    console.warn(typeof NaN);
+
+    //not a number
+
+    //output: number
+  </script> -->
+
+  <!-- <script>
+//6
+let data=10 - - 10;
+console.warn(data);
+
+//output:20
+
+
+//output:
+</script> -->
+
+  <!-- <script>
+//7
+  const set=new Set([1,1,2,3,4]);
+  console.log(set);
+//output:1 2 3 4 
+
+</script> -->
+
+  <!-- <script>
+    //8
+    let data={name:"anil"};
+    console.warn(delete data.name);
+    console.warn(data)
+     
+    //output: true, {}
+    
+    </script> -->
+
+  <!-- <script>
+        //9
+        let data={name:"anil"};
+        console.warn(delete data);
+        console.warn(data);
+        
+        //output: false, {name:'anil'}
+    </script> -->
+
+  <!-- <script>
+        //10
+  const data=["peter","anil","sam"];
+  const[y,z]=data;
+  console.log(y,z);
+
+  //output: peter anil
+  </script> -->
+
+  <!-- <script>
+        //11
+        const data=["peter","anil","sam"];
+        const[,y]=data;
+        console.log(y);
+
+        //output: anil
+    </script> -->
+
+  <!-- <script>
+        //12
+        //how to get name property without . operator
+
+        const data ={name:"anil",age:29,skill:"JS"};
+        const {name} =data;
+        const {age}=data;
+        console.warn(name);
+        console.warn(age);
+
+        //output:anil,29
+    </script> -->
+
+  <!-- <script>
+        //13
+        //merge two objects
+        let data={name:"arun",age:29,skill:"JS"};
+        let info={city:"Noida",mail:"arun@gmail.com"};
+        data={...data,...info};
+        console.warn(data);
+        //output:{name: 'arun', age: 29, skill: 'JS', city: 'Noida', mail: 'arun@gmail.com'}
+    </script> -->
+
+  <!-- <script>
+    //14
+    //merge two objects
+    let data={name:"arun",age:29,skill:"JS"};
+    let info={city:"Noida",mail:"arun@gmail.com"};
+    //data={data,...info};
+    data={data:{name:"arun",age:29,skill:"JS"},...info};
+    console.warn(data);
+    //output:city:"Noida
+    //"data:{name: 'arun', age: 29, skill: 'JS'}
+    //mail:"arun@gmail.com"
+  </script> -->
+
+  <!-- <script>
+    //15
+    const name='Anil';
+    console.log(name());
+
+    //output:uncaught TypeError: name is not a function
+
+  </script> -->
+
+  <!-- <script>
+    //16
+    const result= false || {} || null;
+    console.warn(result);
+    const result1= false || {} || 20;
+    console.warn(result1);
+    const result2= false || 20 || null;
+    console.warn(result2);
+    //object is a true value or a positive value
+
+    //output:{},{},20
+
+  </script> -->
+
+  <!-- <script>
+    //17
+    const res = null || false || "";
+    console.warn(res);
+
+    //agar koi v true ya positive value nhi to last wali ko utha lega
+
+    const res1 = null || "" || false;
+    console.warn(res1);
+
+    const res2 = [] || "" || false;
+    console.warn(res2);
+
+    //arrays are also considered as true;
+
+    //output: last empty string, false,[]
+  </script> -->
+
+  <!-- <script>
+    //18
+    console.warn(Promise.resolve(5));
+
+    //fufilled means promise hamara chal chuka hu
+
+    //output:Promise {<fulfilled>: 5}
+  </script> -->
+
+  <!-- <script>
+    //19
+    console.log("😊" === "😊");
+    console.log("😊" == "😊");
+    //emoji contains unicodes hence they will return according to unicodes
+    //output:true,true
+  </script> -->
+
+  <!-- <script>
+    //20
+    JSON.parse();
+    // this converts JSON to JavaScript value
+    //output:
+  </script> -->
+
+  <!-- <script>
+    //21
+    let name = "shakya";
+    function getName() {
+      console.log(name);
+      var name = "arun";
+    }
+    getName();
+
+    //output:undefined
+
+    function getName2() {
+      console.log(name);
+      //let name='arun';
+      const name = "arun";
+    }
+    getName2();
+
+    //we can't access variable before declaration in let and const but can be in var (which will give undefined)
+
+    //output:Uncaught ReferenceError: Cannot access 'name' before initialization
+  </script> -->
+
+  <!-- <script>
+    //22
+
+    let name = "arun";
+    function getName() {
+      console.log(name);
+    }
+    getName();
+
+    //NOTE: let scope is block level
+
+    //output:arun
+  </script> -->
+
+  <!-- <script>
+    //23
+    // output should be 6
+    function sumValues(x, y, z) {
+      return x + y + z;
+    }
+    console.warn(sumValues(...[1, 2, 3]));
+    // here first the array is destructed to 1,2,3 then the function get called
+    //output:6
+  </script> -->
+
+  <!-- <script>
+    //26
+    const name = "i love coding ";
+    console.log(typeof name);
+    console.log(!typeof name);
+    console.log(!typeof name == "object");
+    console.log(!typeof name === "object");
+    console.log(!typeof name == "string");
+    console.log(!typeof name === "string");
+    console.log(!typeof name === false);
+    //output: string,false,false,false,false,false,true
+  </script> -->
+
+  <!-- <script>
+    //27
+    const name = "Arun";
+    const age = 21;
+    console.log(isNaN(name));
+    console.log(isNaN(age));
+
+    //output:true,false
+  </script> -->
+
+  <!-- <script>
+    //29
+    let person = { name: "Anil" };
+    //what can modify person object
+    Object.seal(person);
+    person.name = "Arun";
+    person.age = 29;
+    // when we use seal then other values cant we add we can only modify the given value
+    console.warn(person);
+    //output:{name: 'Arun'}
+  </script> -->
+
+  <!-- <script>
+    //30
+    let data = [2, 9, 0, 10];
+    //remove the first element
+    data.shift();
+    //by using shift() we can remove the first element
+
+    console.warn(data);
+    //output:9,0,10
+  </script> -->
+
+  <!-- <script>
+    let data = [2, 9, 0, 10];
+    //remove the last element
+    data.pop();
+    //by using pop() we can remove the first element
+
+    console.warn(data);
+    //output:2,9,0;
+  </script> -->
+
+  <!-- 
+  <script>
+    //32
+    let data = { name: "anil" };
+    delete data.name;
+    console.warn(data);
+    //output:it will result into blank object
+  </script> -->
+
+  <!-- <script>
+    //33
+    let data = "true";
+    //convert data to boolean false value;
+    console.warn(typeof !data);
+    console.warn(!data);
+    //output:boolean,false;
+  </script> -->
+
+  <!-- <script>
+    //33
+
+    let data = "true";
+    //convert data to boolean true value
+    console.warn(data);
+
+    //output:true
+  </script> -->
+
+  <!-- <script>
+    //34
+    //difference between map and forEach function
+
+    //output: map function will always return something but forEach do not
+  </script> -->
+
+  <!-- <script>
+    //35
+    let data = ["anil", "peter", "bruce"];
+    delete data[1];
+    console.warn(data);
+    //output:['anil', empty, 'bruce']
+
+    //blank and NULL take some space but delete makes it empty
+    // length of the array would be 3
+  </script> -->
+
+  <!-- <script>
+    //37
+    let a = [1, 2, 3, 4];
+    let b = [8, 4, 5, 6];
+    let c = [...a, ...b];
+    console.warn(c);
+    //output:[1, 2, 3, 4, 8, 4, 5, 6]
+  </script> -->
+
+  <!-- <script>
+    //38
+
+    let c = 3 ** 3;
+    console.warn(c);
+    //output:3*3*3=27
+  </script> -->
+
+  <!-- 
+  <script>
+    //39
+    let a = 2;
+    setTimeout(() => {
+      console.warn(a);
+    }, 0);
+    a = 100;
+
+    //setTimeout() function ko last m execute kiya isne
+    //output:100
+  </script> -->
+
+  <!-- <script>
+    //40
+    const a = 2;
+    const A = 30;
+    console.warn(A);
+
+    //output:30
+  </script> -->
+
+  <!-- <script>
+    //41
+    let A10 = "like";
+    //let 10A="likes";
+    console.warn(A10);
+
+    // variable starting should not be a number
+    //output:like
+  </script> -->
+
+  <!-- <script>
+    //43
+    let a = 1;
+    let b = 2;
+    console.warn(--b == a);
+    //output:true
+  </script> -->
+
+  <!-- <script>
+    //44
+    let a = 1;
+    let b = 1;
+    let c = 2;
+    console.warn((a === b) === --c);
+    //output:false
+    // initially a===b return true and boolean value but when true===1 which return false;
+  </script> -->
+
+  <!-- <script>
+    //45
+    let a = 1;
+    let b = 1;
+    let c = 2;
+    console.warn((a === b) == --c);
+
+    //output:true
+  </script> -->
+
+  <!-- <script>
+    // 46
+    var a;
+    console.warn(a);
+    console.warn(c);
+    var c;
+
+    //output:undefined,undefined
+  </script> -->
+
+  <!-- <script>
+    //47
+    console.warn(b);
+    // we have not even declare it 
+    //output:not defined
+  </script> -->
+
+  <!-- 
+  <script>
+    //48
+    console.warn([[[[]]]]);
+
+    //output:[Array(1)],Array(1),Array(1),Array(0)
+
+    // only the last array would have the empty element
+  </script> -->
+
+  <!-- <script>
+    //49
+    //to find the type of OS name
+    console.warn(navigator.platform)
+    //output:Win32
+  </script> -->
+
+  <!-- <script>
+    //51
+    function fruit() {
+      console.log(name);
+      console.log(price);
+
+      var name = "apple";
+      let price = 20;
+    }
+    fruit();
+    //hosting concept is working
+    //hosting-- first use and then declare no issue( var)
+    //and let given error
+    //output:undefined ,error
+
+  </script> -->
+
+  <!-- <script>
+    //52
+    for (var i = 0; i < 3; i++) {
+      setTimeout(() => console.log(i), 1);
+    }
+
+    // here var variable became global 
+
+    //output:3,3,3
+    //setTimeout() is executed at last
+    //the whole function got into stack anf for loop is runs till 3
+  </script> -->
+
+  <!-- <script>
+    //
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => console.log(i), 1);
+    }
+
+    // let SCOPE IS BLOCK LEVEL
+    //output:0,1,2
+  </script> -->
+
+  <!-- <script>
+    //53
+    console.warn(+true);
+    console.warn(typeof +true);
+
+    //output:1,number
+  </script> -->
+
+  <!-- <script>
+    //55
+    console.warn(!"anil");
+    console.warn(typeof "anil");
+
+    //output:false, string
+  </script> -->
+
+  <!-- <script>
+    //56
+    let data="size";
+    const bird ={
+      size: "small",
+    };
+    console.warn(bird[data]);//to use variable data in array we can use []
+    console.warn(bird["size"]);
+    console.warn(bird.size);
+    console.warn(bird.data);
+
+    //output:small,small,small,undefined
+  </script> -->
+
+  <!-- <script>
+    //57
+    let c={name:'peter'};
+    let d;
+    // yahan data copy na hok memory address copy ho jaati hai
+    d=c;
+    c.name="anil";
+    console.log(d.name);
+
+    //output:anil
+  </script> -->
+
+  <!-- <script>
+    //58
+    var x;
+    let x = 10;
+    console.log(x);
+    //output:Uncaught SyntaxError: Identifier 'x' has already been declared
+  </script> -->
+
+  <!-- <script>
+    //59
+    let x;
+    x=10;
+    console.log(x);
+
+    //output:10
+  </script> -->
+
+  <!-- <script>
+    //60
+    let a=3;
+    let b=new Number(3);
+    console.log(typeof b);
+    console.log(a==b);
+    console.log(a===b);
+   
+
+    //output:object, true, falseF
+  </script> -->
+
+  <!-- <script>
+    //61
+    let name;
+    namess = {};
+    console.log(name);
+    console.log(namess);
+
+    //output:undefined,empty object
+  </script> -->
+
+  <!-- <script>
+    //62
+    function fruit() {
+      console.log("woof");
+    }
+    fruit.name = "apple";
+
+    fruit();
+
+    //output:woof
+  </script> -->
+
+  <!-- <script>
+    //63
+    function sum(a, b) {
+      return a + b;
+    }
+    console.warn(sum(1, "2"));
+
+    //both a and b are converted into string
+
+    //output:12
+  </script> -->
+
+  <!-- <script>
+    //64
+    let number=0;
+    console.log(number++);
+    console.log(++number);
+    console.log(number);
+
+    //output:0,2,2
+  </script> -->
+
+  <!-- <script>
+    //65
+    function getAge(...args){
+      console.log(args);
+      console.log(typeof atgs);
+    }
+
+    getAge(21);
+    // typeof array is object ... array is not data type in JS
+
+    //output:[21],object
+  </script> -->
+
+  <!-- <script>
+    //66
+    function getAge() {
+      "use strict";
+      // if we use strict then let,var,const use karna padhega
+
+      age = 21;
+      console.log(age);
+    }
+    getAge();
+    //output:ncaught ReferenceError: age is not defined at getAge
+  </script> -->
+
+  <!-- <script>
+    //67
+
+    const sum = eval("10*10+5");
+    // eval converts the expression to the algebra
+    console.warn(sum);
+
+    //output:105
+  </script> -->
+
+  <!-- <script>
+    //68
+    //** How long is cool_secret accessible?
+    //sessionStorage.setItem('cool_secret',123);
+
+    //output:as we close the tabs
+  </script> -->
+
+  <!-- <script>
+    //69
+    const obj={1:"a",2:"b",3:"c"};
+
+    console.log(obj.hasOwnProperty("1"));
+    console.warn(obj.hasOwnProperty(1));
+    console.log(obj.hasOwnProperty("4"));
+    console.warn(obj.hasOwnProperty(4));
+
+    //output:T,T,F,F
+  </script> -->
+
+  <!-- <script>
+    //70
+    const obj={a:"one",b:"two",a:"repeat"}
+    console.warn(obj);
+    //output:{a: 'repeat', b: 'two'}
+  </script> -->
+
+  <!-- 
+  <script>
+    //72
+    const foo = () => console.log("First");
+    const bar = () => setTimeout(() => console.log("Second"));
+    const baz = () => console.log("Third");
+
+    bar();
+    foo();
+    baz();
+
+    //output:First,Third,Second
+  </script> -->
+
+  <!-- 
+  <script>
+    //73
+    <div onclick="console.log('first div')">
+      <div onclick="console.log('second div')">
+        <button onclick="console.log('button')"> Click!</button>
+      </div>
+    </div>;
+
+    //output:button,second div, first div
+  </script> -->
+
+  <!-- <script>
+    //75
+    const person = { name: "anil" };
+    function sayHi(age) {
+      return `${this.name} is ${age}`;
+    }
+
+    console.log(sayHi.call(person,21));
+    console.log(sayHi.bind(person,21)());
+    console.log(sayHi.bind(person,21));
+    
+    
+    //output:anil is 21,anil is 21,ƒ sayHi(age)
+    // {return `${this.name} is ${age}`;}
+  </script> -->
+
+  <!-- <script>
+    //75
+    function sayHi() {
+      return (() => 0)();
+    }
+    console.log(typeof sayHi());
+
+    //output:number
+  </script> -->
+
+  <!-- <script>
+    //76
+    function sayHi() {
+      return () => 0;
+    }
+    console.log(typeof sayHi());
+
+    //output:function
+  </script> -->
+
+  <!-- <script>
+    //77
+    console.log(typeof typeof 1);
+
+    //output:string
+  </script> -->
+
+  <!-- <script>
+    //78
+    const numbers = [1, 2, 3];
+    numbers[6] = 11;
+    console.log(numbers);
+    //output:[1, 2, 3, empty × 3, 11]
+  </script> -->
+
+  <!-- <script>
+    //79
+    const numbers = [1, 2, 3];
+    numbers[9] = numbers;
+
+    console.log(numbers);
+
+    //output:infinite number time jayega
+  </script> -->
+
+  <!-- 
+  <script>
+    //80
+    //everything in javascript is either a
+    //output:primitive or object
+  </script> -->
+
+  <!-- <script>
+    //81
+
+    console.log(!!null);
+    console.log(!!"");
+    console.log(!!1);
+
+    //output:F,F,T
+  </script> -->
+
+  <!-- <script>
+    //82
+    console.warn(setInterval(()=> console.log('Hi'),1000));
+    console.warn(setInterval(()=> console.log('Hii'),1000));
+    console.warn(setInterval(()=> console.log('Hiii'),1000));
+    //output:Hi,Hii,Hiii
+  </script> -->
+
+  <!-- <script>
+    //83
+    console.log([..."anil"]);
+    console.log(..."anil");
+
+    //output:['a', 'n', 'i', 'l'],a n i l
+  </script> -->
+  <!-- 
+  <script>
+    //84
+    const firstPromise =new Promise((res,rej)=>{
+      setTimeout(res,500,'one');
+    })
+    const secondPromise =new Promise((res,rej)=>{
+      setTimeout(res,100,'two');
+    })
+    Promise.race([firstPromise,secondPromise]).then(res=> console.log(res));
+
+    //output:two
+  </script> -->
+
+  <!-- <script>
+    //85
+    let person = { name: "peter" };
+    const members = [person];
+    person = null;
+    console.log(members);
+
+    //output:{name: 'peter'}
+  </script> -->
+
+  <!-- <script>
+    //86
+    const person = {
+      name: "batman",
+      age: 21,
+    };
+    for (const item in person) {
+      console.log(item);
+    }
+    //only key returned
+    //output:name age
+  </script> -->
+
+  <!-- <script>
+    //87
+    let data = 3 + 4 + "5";
+    console.log(data);
+    console.log(typeof data);
+
+    //output:75, string
+  </script> -->
+
+  <!-- <script>
+    //88
+    console.log(typeof 3 + 4 + "5");
+
+    //output:number45
+  </script> -->
+
+  <!-- <script>
+    //89
+    console.log(typeof (3 + 4 + +"5"));
+    // kisi bhi string  k saamne + ya - lagane pe wo number ban jaata hai
+    //output:number
+  </script> -->
+
+  <!-- <script>
+    //90
+    console.log([]==[]);
+// two arrays have different locations
+    //output:false
+  </script> -->
+
+  <!-- <script>
+    //91
+    let data = [1, 2, 3].map((num) => {
+      if (typeof num === "number") return;
+      return num * 2;
+    });
+    console.warn(data);
+    //output:[undefined, undefined, undefined]
+  </script> -->
+
+  <!-- <script>
+    //92
+    function getInfo(member) {
+      member.name = "Anil";
+    }
+
+    const person = { name: "Sarah" };
+    getInfo(person);
+    console.log(person);
+
+    //in JS jab bhi ham object ko pass karte hai as a parameter to wo call by reference pass hota hai..memory location bhi chali jaati hai
+
+    //output:{name: 'Anil'}
+  </script> -->
+
+  <!-- 
+  <script>
+    //93
+
+    function Car() {
+      this.make = "Tata";
+      return { make: "Kia" };
+    }
+    const myCar = new Car();
+    console.log(myCar.make);
+    // on returning it overwrite the last property
+
+    //output:Kia
+  </script> -->
+
+  <!-- <script>
+    //94
+    (()=>{
+      let x=(y=10);
+      // let x=10;
+      // var y =10;
+    })();
+    // var has global space
+    console.log(typeof x);
+    console.log(typeof y);
+    
+
+    //output:undefined,number
+  </script> -->
+
+  <!-- <script>
+    //95
+    (()=>{
+      let x=y=10;
+      // let x=10;
+      // y=10;
+    })();
+    console.log(typeof y);
+
+    //output:number
+  </script> -->
+
+  <!-- <script>
+    //96
+    (() => {
+      let x = 10;
+    })();
+
+    (() => {
+      let x = 10;
+    })();
+
+    console.log(typeof x);
+
+    // let has block label space
+    //output:undefined
+  </script> -->
+
+  <!-- 
+  <script>
+    //97
+    var y = 10;
+    var y = 30;
+    console.log(y);
+    // we can var any number of times
+
+    //output:30
+  </script> -->
+
+  <!-- <script>
+    //97
+    const x = 10;
+    const x = 30;
+    let z=10;
+    let z=40;
+    console.log(y);
+    console.log(z);
+    // it would give error we can't define let / const again and again
+    //output:identifier already declared 
+  </script> -->
+
+  <!-- <script>
+    //98
+    let x=100;
+    (()=>{
+      var x=20;
+    })();
+    console.log(x);
+
+    //output:100
+  </script> -->
+
+  <!-- <script>
+    //99
+    console.warn(!true - true);
+
+    //output:-1
+  </script> -->
+
+  <!-- <script>
+    //100
+    console.warn(true + +"10");
+    //output:11
+  </script> -->
+
+
+  <body></body>
+</html>
